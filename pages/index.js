@@ -1,12 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import News from './news/news'
 
 export default function Home() {
   return (
     <div>
-      <h1>Educatly Task</h1>
+    <News/>
+    <a href={`news/1`}>go to news item</a>
     </div>
+    // <div>
+    //   <h1>Educatly Task</h1>
+    // </div>
     // <div className={styles.container}>
     //   <Head>
     //     <title>Create Next App</title>
