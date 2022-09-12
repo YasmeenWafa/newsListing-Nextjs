@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
     <News/>
-    <a href={`news/1`}>go to news item</a>
+    {/* <a href={`news/1`}>go to news item</a> */}
     </div>
     // <div>
     //   <h1>Educatly Task</h1>
