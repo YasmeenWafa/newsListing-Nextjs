@@ -1,13 +1,41 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import Footer from '../components/footer'
+import Header from '../components/header'
 import styles from '../styles/Home.module.css'
+import { useEffect, useState } from "react"
+import {uuid} from 'uuidv4';
 import News from './news/news'
 
 export default function Home() {
+
+  const [articles, setArticles] = useState([]);
+
+  const getNews = async () => {
+  try {
+    const res = await fetch(
+      `https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=33ba70d6367648b49a76910dfad62ad4`
+    );
+    const data = await res.json();
+    // console.log(data); 
+          data.articles.map(item => item.id = uuid())
+          setArticles(data.articles)
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+  useEffect(() => {
+    if(articles.length === 0)
+      getNews()
+  }, [])
+
   return (
-    <div>
-    <News/>
+    <div className={styles.main}>
+      <Header/>
+      <News articles={articles}/>
+      <Footer/>
     {/* <a href={`news/1`}>go to news item</a> */}
     </div>
     // <div>
