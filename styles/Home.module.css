@@ -16,6 +16,11 @@
   text-align: center;
 }
 
+.subtitle{
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
 .main {
   position: relative;
 }
@@ -35,7 +40,7 @@
 .mainInner {
   min-height: 100vh;
   margin-top: 3rem;
-  padding: 2rem;
+  padding: 2rem 7rem;
 }
 
 .footer {

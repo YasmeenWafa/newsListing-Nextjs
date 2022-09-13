@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import {uuid} from 'uuidv4';
+import styles from '../../styles/Home.module.css'
 import newsStyles from '../../styles/news.module.css'
 import Layout from "../../layout";
 import Article from "../../components/article";
@@ -15,7 +16,16 @@ function News () {
         );
         const data = await res.json();
         // console.log(data); 
-            data.articles.map(item => {item.id = uuid(); item.category="Tech"})
+            data.articles.map(item => {item.id = uuid();
+                 item.category="Tech"
+                 item.shares = "23"
+                 item.comments = [{
+                    id: uuid(),
+                    author: 'Olya', 
+                    publishedAt: item.publishedAt,
+                    content: 'If you have too man tasks to do, or are scattered durina vour workday  breathe. It will help bring you into focus, to concentrate on the most important task you need to be focusing on right now'
+                }]
+                })
             setArticles(data.articles)
     } catch (err) {
         console.log(err);
@@ -38,7 +48,7 @@ function News () {
                         <div className={newsStyles.firstArticle}>
                             {articles.length>0 && 
                                 <Article key={articles[0].id} article={articles[0]} row={false} main={true}
-                                comments={true}
+                                hasComments={true}
                                 />
                             }   
                         </div>
@@ -46,21 +56,21 @@ function News () {
                                 {articles.length >=2 && articles.map((item, index)=> {
                                     if(index < 2){
                                         return <Article key={item.id} article={item} row={false} main={false}
-                                        comments={true}
+                                        hasComments={true}
                                         />
                                     }
                                 })}
                         </div>
                     </div>
                     <div className={newsStyles.editorPicks}>
-                        <h2>Editors Picks</h2>
+                        <h2 className={styles.subtitle}>Editors Picks</h2>
                         {articles.length >= 3 &&
                             <div className={newsStyles.editorPicksArticles}>
                                 {articles.map((item,index)=> {
                                     if(index < 3){
                                        return (
                                        <Article key={item.id} article={item} row={true} main={false}
-                                       hours={true} comments={false}
+                                       hours={true} hasComments={false}
                                        /> 
                                        );
                                     }
