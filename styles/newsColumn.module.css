@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.briefArticle, .mainArticle{
+    color: #454545;
+    padding: 1rem 0;
+    border-bottom: 1px solid #efefef;
+}
+ .date{
+    color: #c4c4c4;
+}

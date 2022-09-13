@@ -1,11 +1,21 @@
 .title{
     color: #c4273a;
-    margin-top: 0;
-    margin-bottom: 2rem;
 }
 .container{
     padding: 2rem;
     border: 1px solid #efefef;
+    color: #454545
+}
+
+.recentPost{
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.recentPost:last-of-type{
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 .orderedList {
@@ -41,4 +51,41 @@
     margin: 0;
     font-size: 18px;
     letter-spacing: 0.5px;
+}
+
+
+.form{
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.input{
+    height: 2.5rem;
+    border: 1px solid;
+    border-color: #e6e6e6;
+    padding-left: 1rem;
+    width: 60%;
+}
+.input::placeholder{
+    color: #c4c4c4;
+}
+.subscribe{
+    background-color: #be1e36;
+    border: none;
+    height: 2.5rem;
+    color: white;
+    font-weight: bold;
+    margin-left: -2px;
+    width: 40%;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon{
+    font-size: 3rem;
+    cursor: pointer;
 }

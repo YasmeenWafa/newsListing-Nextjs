@@ -6,6 +6,9 @@ import Layout from "../../layout";
 import Article from "../../components/article";
 import RecentPosts from "../../components/recent-posts";
 import MostPopular from "../../components/most-popular";
+import Newsletter from "../../components/newsletter";
+import FollowUs from "../../components/follow-us";
+import NewsColumn from "../../components/news-column";
 
 function News () {
     
@@ -35,9 +38,9 @@ function News () {
     };
 
     useEffect(() => {
-        if(articles.length === 0)
+        // if(articles.length === 0)
         getNews();
-    }, [articles])
+    }, [])
     
     return (
         <div>
@@ -71,9 +74,11 @@ function News () {
                                 {articles.map((item,index)=> {
                                     if(index < 3){
                                        return (
-                                       <Article key={item.id} article={item} row={true} main={false}
+                                        <div  key={item.id} className={newsStyles.editorArticle}>
+                                       <Article article={item} row={true} main={false}
                                        hours={true} hasComments={false} brief={false}
                                        /> 
+                                       </div>
                                        );
                                     }
                                 })}
@@ -89,11 +94,32 @@ function News () {
                     <div style={{marginBottom: '2rem'}}>
                         <MostPopular articles={articles.slice(0,5)}/>
                     </div>
+                    <div style={{marginBottom: '2rem'}}>
+                        <Newsletter/>
+                    </div>
+                    <div style={{marginBottom: '2rem'}}>
+                        <FollowUs/>
+                    </div>
                 </div>
             </div>
-            {/* {articles && articles.map(item => (
-                    <Article key={item.id} article={item} row={true} main={false}/>
-                ))} */}
+            <div>
+                <h2 className={styles.subtitle}>Trending</h2>
+                <div className={newsStyles.columnsContainer}>
+                    {/* flex */}
+                    <div className={newsStyles.column}>
+                        <NewsColumn articles={articles.slice(0,5)}/>
+                    </div>
+                    <div className={newsStyles.column}>
+                        <NewsColumn articles={articles.slice(3,7)}/>
+                    </div>
+                    <div className={newsStyles.column}>
+                    <NewsColumn articles={articles.slice(2,6)}/>
+                    </div>
+                    <div className={newsStyles.column}>
+                    <NewsColumn articles={articles.slice(1,4)}/>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

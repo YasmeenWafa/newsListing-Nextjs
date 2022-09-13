@@ -24,6 +24,7 @@
 
 .description {
     color: #454545;
+    line-height: 1.6;
 }
 .author {
     font-size: 14px;
@@ -59,6 +60,9 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 5px solid #ededed;
 }
 @media (max-width: 64em) {
     .mainNewsOuter{
@@ -75,6 +79,8 @@
 @media (max-width: 64em) {
     .mainNews{
        margin-right: 0;
+       flex-direction: column;
+       flex-wrap: nowrap;
     }
 }
 
@@ -114,17 +120,54 @@
     }
 }
 
+.editorArticle{
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.editorArticle:last-of-type{
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
 @media (max-width: 64em) {
+    .editorPicks{
+        margin-top: 2rem;
+    }
     .editorPicks .article{
         flex-direction: column !important;
         flex-wrap: nowrap;
         align-items: unset;
     }
-    .editorPicks .article img{
+    .editorPicks .article .image{
         width: 100% !important;
     }
     .editorPicks .article .content{
         width: 100% !important;
         margin-left: 0 !important;
+    }
+}
+
+
+.columnsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 64em) {
+    .columnsContainer{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+.columnsContainer .column {
+    width: 23%;
+}
+
+@media (max-width: 64em) {
+    .columnsContainer .column{
+        width: 100%;
     }
 }

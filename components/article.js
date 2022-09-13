@@ -19,8 +19,10 @@ const Article = ({article, row, main, hours, hasComments, brief}) => {
          >
             <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
             >
-                <img style={{ width: row ? '30%': '100%' }}
-                 className={newsStyle.image} src={urlToImage}/>
+                <div style={{ width: row ? '30%': '100%' }} className={newsStyle.image} >
+                <img  style={{width: '100%'}}
+                 src={urlToImage}/>
+                 </div>
             </Link>
 
                 <div style={{marginTop: row ? 0 : '2rem', 

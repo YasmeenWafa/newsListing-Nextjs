@@ -9,9 +9,11 @@ const RecentPosts = ({articles}) => {
         <div className={rpStyles.container}>
             <h2 className={`${styles.subtitle} ${rpStyles.title}`}>Recent Posts</h2>
             {articles.map(item => 
-                <Article key={item.id} article={item} row={true} main={false}
-                        hours={true} hasComments={false} brief={true}
-                /> 
+                <div className={rpStyles.recentPost} key={item.id}>
+                    <Article article={item} row={true} main={false}
+                            hours={true} hasComments={false} brief={true}
+                    /> 
+                </div>
             )}
         </div>
     )
