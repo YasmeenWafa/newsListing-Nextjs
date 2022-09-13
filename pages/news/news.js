@@ -4,6 +4,7 @@ import styles from '../../styles/Home.module.css'
 import newsStyles from '../../styles/news.module.css'
 import Layout from "../../layout";
 import Article from "../../components/article";
+import RecentPosts from "../../components/recent-posts";
 
 function News () {
     
@@ -48,7 +49,7 @@ function News () {
                         <div className={newsStyles.firstArticle}>
                             {articles.length>0 && 
                                 <Article key={articles[0].id} article={articles[0]} row={false} main={true}
-                                hasComments={true}
+                                hasComments={true} brief={false}
                                 />
                             }   
                         </div>
@@ -56,7 +57,7 @@ function News () {
                                 {articles.length >=2 && articles.map((item, index)=> {
                                     if(index < 2){
                                         return <Article key={item.id} article={item} row={false} main={false}
-                                        hasComments={true}
+                                        hasComments={true} brief={false}
                                         />
                                     }
                                 })}
@@ -70,7 +71,7 @@ function News () {
                                     if(index < 3){
                                        return (
                                        <Article key={item.id} article={item} row={true} main={false}
-                                       hours={true} hasComments={false}
+                                       hours={true} hasComments={false} brief={false}
                                        /> 
                                        );
                                     }
@@ -81,7 +82,7 @@ function News () {
                 </div>
                 <div className={newsStyles.stickyBar}>
                     {/* sticky right bar */}
-                    <h1>sticky bar jcnjfe jncnjnejn jcjcnj nnxsncskksk</h1>
+                    <RecentPosts articles={articles.slice(0,3)}/>
                 </div>
             </div>
             {/* {articles && articles.map(item => (

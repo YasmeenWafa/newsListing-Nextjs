@@ -3,7 +3,7 @@ import newsStyle from '../styles/news.module.css';
 import moment from 'moment';
 import {FaComment, FaShare} from 'react-icons/fa';
 
-const Article = ({article, row, main, hours, hasComments}) => {
+const Article = ({article, row, main, hours, hasComments, brief}) => {
     const {id, title,
          description, category,
           urlToImage, publishedAt,
@@ -18,36 +18,53 @@ const Article = ({article, row, main, hours, hasComments}) => {
          >
             <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
             >
-                <img  
-                            style={{ width: row ? '30%': '100%' }}
-
-                // style={{maxWidth: main ? '100%': '100%'}}
+                <img style={{ width: row ? '30%': '100%' }}
                  className={newsStyle.image} src={urlToImage}/>
             </Link>
 
                 <div style={{marginTop: row ? 0 : '2rem', 
-                            marginLeft: row ? '2rem' : 0, 
                             width: row ? '65%' : '100%'
                             }}
                             className={newsStyle.content}
                 >
-                    {category &&
+                    {category && !brief &&
                         <p  className={newsStyle.category}>{category}</p>
                     }
-                        <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
+
+                    {!brief &&
+                    <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
                         >
                             {main ?
                             <h1 className={newsStyle.title}>{title}</h1>
                             :
                             <h3 className={newsStyle.title}>{title}</h3>
                             }
-                        </Link>
-                    <p  className={newsStyle.description}>{description}</p>
-                    <p  className={newsStyle.author}>
-                        By 
-                        <span> {author}</span> 
-                        {hours && <span className={newsStyle.hours}> - {moment.utc(publishedAt).local().startOf('seconds').fromNow()}</span>}
-                    </p>
+                    </Link>
+                    }
+                    {brief &&
+                    <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
+                        >
+                            <p className={newsStyle.title}>{title}</p>
+                    </Link>
+                    }
+                    
+                    {!brief &&
+                        <p  className={newsStyle.description}>{description}</p>
+                    }
+                    {!brief &&
+                        <p  className={newsStyle.author}>
+                            By
+                            <span> {author}</span> 
+                            {hours &&
+                                <span className={newsStyle.hours}> - {moment.utc(publishedAt).local().startOf('seconds').fromNow()}</span>
+                            }
+                        </p>
+                    }
+                    {brief && 
+                        <p className={`${newsStyle.hours} ${newsStyle.dateTime}`}>
+                            {moment.utc(publishedAt).local().format("hh:mm a on MMM DD")}
+                        </p>
+                        }
                     {hasComments && 
                         <div className={newsStyle.comments}> 
                             <span>

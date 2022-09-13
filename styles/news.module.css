@@ -4,7 +4,12 @@
     margin-bottom: 2rem;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
 }
+.article:last-of-type{
+    margin-bottom: 0;
+}
+
 .image{
     cursor: pointer;
 }
@@ -31,8 +36,11 @@
 .author span{
     color: #b96767;
 }
-.author .hours {
-    color: #c4c4c4;
+ .hours {
+    color: #c4c4c4 !important;
+}
+.dateTime{
+    font-size: 14px;
 }
 .comments{
     margin-top: 2rem;
@@ -102,6 +110,12 @@
     flex:1;
     position: sticky;
     z-index: 2;
+}
+
+@media (max-width: 64em) {
+    .mainNewsOuter .stickyBar{
+        margin-top: 2rem;
+    }
 }
 
 @media (max-width: 64em) {
