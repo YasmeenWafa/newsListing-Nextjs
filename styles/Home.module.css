@@ -29,9 +29,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 3;
 }
 
-.news {
+.mainInner {
   min-height: 100vh;
   margin-top: 3rem;
   padding: 2rem;

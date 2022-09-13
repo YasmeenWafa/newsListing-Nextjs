@@ -6,7 +6,7 @@ import styles from '../../../styles/Home.module.css'
     const object = JSON.parse(query.article);
 
     return (
-        <div className={styles.news}>
+        <div>
             <h1>News Item </h1>
             <p>{object.title}</p>
         </div>

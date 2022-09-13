@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { useEffect, useState } from "react"
 import {uuid} from 'uuidv4';
-import styles from '../../styles/Home.module.css'
+import newsStyles from '../../styles/news.module.css'
 import Layout from "../../layout";
+import Article from "../../components/article";
 
 function News () {
     
@@ -15,7 +15,7 @@ function News () {
         );
         const data = await res.json();
         // console.log(data); 
-            data.articles.map(item => item.id = uuid())
+            data.articles.map(item => {item.id = uuid(); item.category="Tech"})
             setArticles(data.articles)
     } catch (err) {
         console.log(err);
@@ -28,14 +28,55 @@ function News () {
     }, [articles])
     
     return (
-        <div className={styles.news}>
-            <h1>News</h1>
-            {articles && articles.map(item => (
-                <div key={item.id}>
-                    <Link  href={{ pathname: `/news/${item.id}`, query: { article: JSON.stringify(item) } }}>{item.title}
-                    </Link>
+        <div>
+            <h1 style={{textAlign: 'center'}}>Latest News</h1>
+            <div className={newsStyles.mainNewsOuter}>
+                {/* flex */}
+                <div className={newsStyles.mainNews}>
+                    {/* articles */}
+                    <div className={newsStyles.mainNewsInner}>
+                        <div className={newsStyles.firstArticle}>
+                            {articles.length>0 && 
+                                <Article key={articles[0].id} article={articles[0]} row={false} main={true}
+                                comments={true}
+                                />
+                            }   
+                        </div>
+                        <div className={newsStyles.otherArticles}>
+                                {articles.length >=2 && articles.map((item, index)=> {
+                                    if(index < 2){
+                                        return <Article key={item.id} article={item} row={false} main={false}
+                                        comments={true}
+                                        />
+                                    }
+                                })}
+                        </div>
+                    </div>
+                    <div className={newsStyles.editorPicks}>
+                        <h2>Editors Picks</h2>
+                        {articles.length >= 3 &&
+                            <div className={newsStyles.editorPicksArticles}>
+                                {articles.map((item,index)=> {
+                                    if(index < 3){
+                                       return (
+                                       <Article key={item.id} article={item} row={true} main={false}
+                                       hours={true} comments={false}
+                                       /> 
+                                       );
+                                    }
+                                })}
+                            </div>
+                        }
+                    </div>
                 </div>
-                ))}
+                <div className={newsStyles.stickyBar}>
+                    {/* sticky right bar */}
+                    <h1>sticky bar jcnjfe jncnjnejn jcjcnj nnxsncskksk</h1>
+                </div>
+            </div>
+            {/* {articles && articles.map(item => (
+                    <Article key={item.id} article={item} row={true} main={false}/>
+                ))} */}
         </div>
     )
 }

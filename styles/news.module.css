@@ -1,0 +1,83 @@
+/*  article  */
+.article {
+    display: flex;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.image{
+    cursor: pointer;
+}
+
+.title{
+    cursor: pointer;
+}
+
+.category{
+    color:#b4b4b4;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.description {
+    color: #454545;
+}
+.author {
+    font-size: 14px;
+    margin-top: 2rem;
+}
+.author span{
+    color: #b96767;
+}
+.author .hours {
+    color: #c4c4c4;
+}
+.comments{
+    margin-top: 2rem;
+    border: 1px solid #efefef;
+    padding: 1rem;
+    width: fit-content;
+}
+.comments span{
+    color: #5f6061;
+}
+.comments span:first-of-type{
+    margin-right: 1rem;
+}
+
+
+/* news list */
+
+/* main news */
+.mainNewsOuter{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.mainNews{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 2.5;
+    margin-right: 2rem;
+}
+
+.mainNewsInner {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mainNewsInner .firstArticle {
+    flex: 2;
+    margin-right: 2rem;
+}
+.mainNewsInner .otherArticles{
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+}
+.mainNewsOuter .stickyBar{
+    flex:1;
+    position: sticky;
+    z-index: 2;
+}
