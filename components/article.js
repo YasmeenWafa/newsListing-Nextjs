@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from '../styles/Home.module.css';
 import newsStyle from '../styles/news.module.css';
 import moment from 'moment';
 import {FaComment, FaShare} from 'react-icons/fa';
@@ -32,20 +33,24 @@ const Article = ({article, row, main, hours, hasComments, brief}) => {
                     }
 
                     {!brief &&
-                    <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
-                        >
-                            {main ?
-                            <h1 className={newsStyle.title}>{title}</h1>
-                            :
-                            <h3 className={newsStyle.title}>{title}</h3>
-                            }
-                    </Link>
+                    <div className={styles.link}>
+                        <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
+                            >
+                                {main ?
+                                <h1 className={newsStyle.title}>{title}</h1>
+                                :
+                                <h3 className={newsStyle.title}>{title}</h3>
+                                }
+                        </Link>
+                    </div>
                     }
                     {brief &&
-                    <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
-                        >
-                            <p className={newsStyle.title}>{title}</p>
-                    </Link>
+                    <div className={styles.link}>
+                        <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
+                            >
+                                <p className={newsStyle.title}>{title}</p>
+                        </Link>
+                    </div>
                     }
                     
                     {!brief &&

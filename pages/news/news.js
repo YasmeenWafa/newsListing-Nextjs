@@ -5,6 +5,7 @@ import newsStyles from '../../styles/news.module.css'
 import Layout from "../../layout";
 import Article from "../../components/article";
 import RecentPosts from "../../components/recent-posts";
+import MostPopular from "../../components/most-popular";
 
 function News () {
     
@@ -82,7 +83,12 @@ function News () {
                 </div>
                 <div className={newsStyles.stickyBar}>
                     {/* sticky right bar */}
-                    <RecentPosts articles={articles.slice(0,3)}/>
+                    <div style={{marginBottom: '2rem'}}>
+                        <RecentPosts articles={articles.slice(0,3)}/>
+                    </div>
+                    <div style={{marginBottom: '2rem'}}>
+                        <MostPopular articles={articles.slice(0,5)}/>
+                    </div>
                 </div>
             </div>
             {/* {articles && articles.map(item => (

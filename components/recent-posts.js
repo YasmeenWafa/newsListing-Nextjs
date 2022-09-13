@@ -1,4 +1,4 @@
-import rpStyles from '../styles/recentPosts.module.css'
+import rpStyles from '../styles/box.module.css'
 import styles from '../styles/Home.module.css'
 import Article from './article';
 

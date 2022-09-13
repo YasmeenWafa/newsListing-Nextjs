@@ -6,6 +6,12 @@
   background-color: #f6ffff;
 }
 
+.link{
+  cursor: pointer;
+}
+.link:hover{
+  text-decoration: underline;
+}
 .footerText{
   color: #858681;
   font-size: 12px;
