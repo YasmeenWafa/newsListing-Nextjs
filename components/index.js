@@ -8,3 +8,4 @@ import {FollowUs} from './follow-us';
 import {NewsColumn} from './news-column';
 import {Comment} from './comment';
 import {CommentForm} from './comment-form';
+import {SocialShare} from './social-share';

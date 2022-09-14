@@ -6,6 +6,7 @@ import {AiFillDislike, AiFillLike} from 'react-icons/ai';
 import moment from 'moment';
 import Comment from '../../../components/comment';
 import CommentForm from '../../../components/comment-form';
+import SocialShare from '../../../components/social-share';
 
 function NewsItem ({ router: { query } }) {
 
@@ -38,7 +39,7 @@ function NewsItem ({ router: { query } }) {
             </div>
             <div className={newsItemStyles.articleContainer}>
                 <div className={newsItemStyles.articleShares}>
-                    <h1>shares</h1>
+                    <SocialShare shares={shares}/>
                 </div>
                 <div className={newsItemStyles.articleContent}>
                     <img  style={{width: '100%'}} src={urlToImage}/>
