@@ -2,7 +2,7 @@ import commentFormStyles from '../styles/newsItem.module.css';
 
 const CommentForm = () => {
     return (
-        <div className={commentFormStyles.commentForm}>
+        <form className={commentFormStyles.commentForm}>
             <input className={commentFormStyles.name}
             placeholder="Name" type="text" id="name" name="name" required />
             <div className={commentFormStyles.emailBox}>
@@ -11,7 +11,8 @@ const CommentForm = () => {
                 <label className={commentFormStyles.emailLabel} for="email">will not be published</label>
             </div>
             <textarea className={commentFormStyles.message} placeholder="Message" required/>
-        </div>
+            <button type="submit" className={commentFormStyles.submit}>Send</button>
+        </form>
     )
 }
 

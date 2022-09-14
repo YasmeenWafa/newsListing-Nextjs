@@ -1,7 +1,13 @@
 .container {
   padding: 0 2rem;
 }
-
+.scrollTop{
+  position: fixed;
+  bottom: 3rem;
+  z-index: 1000;
+  right: 2rem;
+  font-size: 40px;
+}
 .white {
   background-color: #f6ffff;
 }
