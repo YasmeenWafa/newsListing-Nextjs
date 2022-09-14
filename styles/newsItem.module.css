@@ -1,0 +1,132 @@
+.articleHeader{
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 1rem;
+}
+
+.articleContainer{
+    display:  flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 64em) {
+    .articleContainer{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+.articleShares{
+    flex: 1;
+    margin-right: 2rem;
+}
+.articleContent{
+    flex: 3;
+    padding: 3rem 0;
+}
+
+.groupButtons{
+    display: flex;
+    margin-top: 2rem;
+}
+@media (max-width: 64em) {
+    .groupButtons{
+        flex-direction: column;
+    }
+    .groupButtons button:first-of-type{
+        margin-right: 0 !important;
+        margin-bottom: 1rem;
+    }
+}
+.groupButtons button{
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    color: #8e8c84;
+    background-color: #ececec;
+    cursor: pointer;
+}
+.groupButtons button:first-of-type{
+    margin-right: 1rem;
+}
+.groupButtons .green{
+    background-color: #1aa858;
+    color: white;
+}
+
+.groupButtons .icon{
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.commentsContainer{
+    margin: 2rem 0;
+}
+
+.comment {
+    border: 2px solid #f7f7f7;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.comment:last-of-type{
+    margin-bottom: 0;
+}
+.comment .pictureContainer{
+    flex: 1;
+    margin-right: 1.5rem;
+}
+.comment .picture{
+    background-color: #ececec;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 1rem;
+}
+.comment .picture .icon{
+    font-size: 2rem;
+    color: white
+}
+.comment .content{
+    flex: 8;
+}
+
+.commentForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.commentForm .emailBox{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.commentForm .emailLabel{
+    margin-left: 1rem;
+    font-style: italic;
+    color: #b8b8b8;
+}
+.commentForm .email{
+    margin-bottom: 0;
+}
+.commentForm .name, .commentForm .email{
+    width: 60%;
+}
+
+.commentForm input, .commentForm textarea{
+    border: 1px solid #dadada;
+    border-radius: 4px;
+}
+.commentForm input::placeholder, .commentForm textarea::placeholder{
+    color: #b8b8b8;
+}
+
+.commentForm input{
+    margin-bottom: 1rem;
+    height: 2.5rem;
+    padding: 1rem;
+}
+
+.commentForm textarea{
+    padding: 1rem;
+    font-family: inherit;
+}

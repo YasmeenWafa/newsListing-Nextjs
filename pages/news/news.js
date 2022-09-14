@@ -29,7 +29,14 @@ function News () {
                     author: 'Olya', 
                     publishedAt: item.publishedAt,
                     content: 'If you have too man tasks to do, or are scattered durina vour workday  breathe. It will help bring you into focus, to concentrate on the most important task you need to be focusing on right now'
-                }]
+                },
+                {
+                    id: uuid(),
+                    author: 'Olya', 
+                    publishedAt: item.publishedAt,
+                    content: 'If you have too man tasks to do, or are scattered durina vour workday  breathe. It will help bring you into focus, to concentrate on the most important task you need to be focusing on right now'
+                }
+            ]
                 })
             setArticles(data.articles)
     } catch (err) {
