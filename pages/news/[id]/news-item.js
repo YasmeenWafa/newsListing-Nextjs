@@ -7,24 +7,31 @@ import moment from 'moment';
 import Comment from '../../../components/comment';
 import CommentForm from '../../../components/comment-form';
 import SocialShare from '../../../components/social-share';
+import   {useRouter}  from 'next/router';
 
 function NewsItem ({ router: { query } }) {
+    
+    const router = useRouter();
+    try {
+        const article = JSON.parse(query.article);
 
-    const article = JSON.parse(query.article);
-    const {
-        id, 
-        title,
-        description,
-        category,
-        urlToImage, 
-        publishedAt,
-        content,
-        author,
-        source, 
-        shares,
-        comments
-    } = article;
+        const {
+            id, 
+            title,
+            description,
+            category,
+            urlToImage, 
+            publishedAt,
+            content,
+            author,
+            source, 
+            shares,
+            comments
+        } = article;
 
+        
+      
+    
     return (
         <div>
             <div className={newsItemStyles.articleHeader}>
@@ -66,6 +73,10 @@ function NewsItem ({ router: { query } }) {
             </div>
         </div>
     )
+} catch (err) {
+    // 👇️ This runs
+    () => router.push('/')
+  }
 }
 
 export default withRouter(NewsItem);
