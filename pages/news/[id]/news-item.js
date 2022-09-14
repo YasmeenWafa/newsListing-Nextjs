@@ -1,6 +1,6 @@
 import { withRouter } from 'next/router';
-import styles from '../../../styles/Home.module.css';
-import newsStyle from '../../../styles/news.module.css';
+import styles from '../../../styles/main.module.css';
+import articleStyles from '../../../styles/article.module.css';
 import newsItemStyles from '../../../styles/newsItem.module.css';
 import {AiFillDislike, AiFillLike} from 'react-icons/ai';
 import moment from 'moment';
@@ -29,17 +29,14 @@ function NewsItem ({ router: { query } }) {
             comments
         } = article;
 
-        
-      
-    
     return (
         <div>
             <div className={newsItemStyles.articleHeader}>
                 <h1>{title}</h1>
-                <p  className={newsStyle.author}>
+                <p  className={articleStyles.author}>
                     By
                     <span> {author} </span> 
-                    <span className={newsStyle.hours}>
+                    <span className={articleStyles.hours}>
                         Published on {moment.utc(publishedAt).local().format('MMM DD, YYYY')}
                     </span>  
                 </p>

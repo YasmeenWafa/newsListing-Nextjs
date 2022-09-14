@@ -1,4 +1,4 @@
-import commentStyles from '../styles/newsItem.module.css';
+import commentStyles from '../styles/comment.module.css';
 import {BsFillPersonFill} from 'react-icons/bs'
 import moment from 'moment';
 

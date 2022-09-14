@@ -1,0 +1,28 @@
+.comment {
+    border: 2px solid #f7f7f7;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.comment:last-of-type{
+    margin-bottom: 0;
+}
+.comment .pictureContainer{
+    flex: 1;
+    margin-right: 1.5rem;
+}
+.comment .picture{
+    background-color: #ececec;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 1rem;
+}
+.comment .picture .icon{
+    font-size: 2rem;
+    color: white
+}
+.comment .content{
+    flex: 8;
+}

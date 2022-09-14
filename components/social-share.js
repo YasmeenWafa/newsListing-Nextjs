@@ -1,10 +1,10 @@
-import socialShareStyles from '../styles/newsItem.module.css';
+import socialShareStyles from '../styles/shareBox.module.css';
 import {MdEmail} from 'react-icons/md';
 import {IoIosShareAlt} from 'react-icons/io'
 import {FaFacebookF, FaTwitter} from 'react-icons/fa'
 
-
 const SocialShare = ({shares}) => {
+    
     return(
     <div className={socialShareStyles.sharesBox}>
         <div className={socialShareStyles.sharesNumber}>

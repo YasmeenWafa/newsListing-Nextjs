@@ -1,0 +1,52 @@
+.commentForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.commentForm .emailBox{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.commentForm .emailLabel{
+    margin-left: 1rem;
+    font-style: italic;
+    color: #b8b8b8;
+}
+.commentForm .email{
+    margin-bottom: 0;
+}
+.commentForm .name, .commentForm .email{
+    width: 60%;
+}
+
+.commentForm input, .commentForm textarea{
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-family: inherit;
+}
+.commentForm input::placeholder, .commentForm textarea::placeholder{
+    color: #b8b8b8;
+}
+
+.commentForm input{
+    height: 2.5rem;
+    padding: 1rem;
+}
+
+.commentForm .submit{
+    background-color: #1999ff;
+    color: white;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 1rem 4rem;
+}
+@media (max-width: 64em) {
+    .commentForm .submit{
+        margin: 0 auto;
+    }
+}

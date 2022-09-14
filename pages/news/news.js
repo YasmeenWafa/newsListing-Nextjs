@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import {uuid} from 'uuidv4';
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/main.module.css'
 import newsStyles from '../../styles/news.module.css'
 import Layout from "../../layout";
 import Article from "../../components/article";
@@ -20,7 +20,6 @@ function News () {
         `https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=33ba70d6367648b49a76910dfad62ad4`
         );
         const data = await res.json();
-        // console.log(data); 
             data.articles.map(item => {item.id = uuid();
                  item.category="Tech"
                  item.shares = "23"
@@ -45,7 +44,6 @@ function News () {
     };
 
     useEffect(() => {
-        // if(articles.length === 0)
         getNews();
     }, [])
     
@@ -53,9 +51,7 @@ function News () {
         <div>
             <h1 style={{textAlign: 'center'}}>Latest News</h1>
             <div className={newsStyles.mainNewsOuter}>
-                {/* flex */}
                 <div className={newsStyles.mainNews}>
-                    {/* articles */}
                     <div className={newsStyles.mainNewsInner}>
                         <div className={newsStyles.firstArticle}>
                             {articles.length>0 && 
@@ -94,7 +90,6 @@ function News () {
                     </div>
                 </div>
                 <div className={newsStyles.stickyBar}>
-                    {/* sticky right bar */}
                     <div style={{marginBottom: '2rem'}}>
                         <RecentPosts articles={articles.slice(0,3)}/>
                     </div>
@@ -112,7 +107,6 @@ function News () {
             <div>
                 <h2 className={styles.subtitle}>Trending</h2>
                 <div className={newsStyles.columnsContainer}>
-                    {/* flex */}
                     <div className={newsStyles.column}>
                         <NewsColumn articles={articles.slice(0,5)}/>
                     </div>
@@ -132,8 +126,7 @@ function News () {
 }
 
 News.getLayout = page => (
-    <Layout
-    >
+    <Layout>
         {page}
     </Layout>
 );

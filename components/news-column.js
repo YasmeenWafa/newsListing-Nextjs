@@ -1,6 +1,6 @@
 import moment from 'moment';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/main.module.css';
 import ncStyles from '../styles/newsColumn.module.css';
 
 const NewsColumn = ({articles}) => {

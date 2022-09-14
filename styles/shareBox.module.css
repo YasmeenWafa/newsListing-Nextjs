@@ -1,0 +1,46 @@
+.sharesBox{
+    border:1px solid #e7e7e7;
+}
+.sharesBox .sharesNumber{
+    padding: 2rem;
+    text-align: center;
+}
+.sharesNumber h1{
+    font-size: 60px;
+    margin: 0;
+}
+.sharesNumber p{
+    margin: 0;
+    font-size: 20px;
+}
+.sharesBox .options{
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 64em) {
+    .sharesBox .options{
+        flex-direction: row;
+        border-top: 1px solid #e7e7e7;
+        flex-wrap: wrap;
+    }
+}
+.sharesBox .option{
+    border-top: 1px solid #e7e7e7 ;
+    padding: 1rem;
+    color: #b0b0b1;
+}
+@media (max-width: 64em) {
+    .sharesBox .option{
+        border: none;
+        border-right: 1px solid #e7e7e7;
+        flex: 1;
+        text-align: center;
+    }
+    .sharesBox .option:last-of-type{
+        border: none;
+    }
+}
+.sharesBox .option svg{
+    vertical-align: middle;
+    margin-right: 10px;
+}

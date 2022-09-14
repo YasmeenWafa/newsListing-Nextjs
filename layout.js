@@ -1,6 +1,6 @@
 import Header from "./components/header";
 import Footer from "./components/footer";
-import styles from './styles/Home.module.css'
+import styles from './styles/main.module.css'
 import {FaChevronCircleUp} from 'react-icons/fa';
 
 const Layout = ({ children }) => {

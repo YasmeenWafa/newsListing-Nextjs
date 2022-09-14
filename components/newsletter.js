@@ -1,5 +1,5 @@
 import boxStyles from '../styles/box.module.css'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/main.module.css'
 
 const Newsletter = () => {
 

@@ -1,25 +1,30 @@
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
-import newsStyle from '../styles/news.module.css';
+import styles from '../styles/main.module.css';
+import articleStyles from '../styles/article.module.css';
 import moment from 'moment';
 import {FaComment, FaShare} from 'react-icons/fa';
 
 const Article = ({article, row, main, hours, hasComments, brief}) => {
-    const {id, title,
-         description, category,
-          urlToImage, publishedAt,
-           content, author,
-            source, shares,
-             comments} = article;
+    const {
+        id, 
+        title,
+        description,
+        category,
+        urlToImage,
+        publishedAt,
+        author,
+        shares,
+        comments
+    } = article;
 
     const direction =  row ? 'row' : 'column'
     return (
-        <div key={id} className={newsStyle.article}
+        <div key={id} className={articleStyles.article}
          style={{flexDirection: direction }}
          >
             <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
             >
-                <div style={{ width: row ? '30%': '100%' }} className={newsStyle.image} >
+                <div style={{ width: row ? '30%': '100%' }} className={articleStyles.image} >
                 <img  style={{width: '100%'}}
                  src={urlToImage}/>
                  </div>
@@ -28,10 +33,10 @@ const Article = ({article, row, main, hours, hasComments, brief}) => {
                 <div style={{marginTop: row ? 0 : '2rem', 
                             width: row ? '65%' : '100%'
                             }}
-                            className={newsStyle.content}
+                            className={articleStyles.content}
                 >
                     {category && !brief &&
-                        <p  className={newsStyle.category}>{category}</p>
+                        <p  className={articleStyles.category}>{category}</p>
                     }
 
                     {!brief &&
@@ -39,9 +44,9 @@ const Article = ({article, row, main, hours, hasComments, brief}) => {
                         <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
                             >
                                 {main ?
-                                <h1 className={newsStyle.title}>{title}</h1>
+                                <h1>{title}</h1>
                                 :
-                                <h3 className={newsStyle.title}>{title}</h3>
+                                <h3>{title}</h3>
                                 }
                         </Link>
                     </div>
@@ -50,30 +55,30 @@ const Article = ({article, row, main, hours, hasComments, brief}) => {
                     <div className={styles.link}>
                         <Link  href={{ pathname: `/news/${id}`, query: { article: JSON.stringify(article) } }}
                             >
-                                <p className={newsStyle.title}>{title}</p>
+                                <p className={articleStyles.title}>{title}</p>
                         </Link>
                     </div>
                     }
                     
                     {!brief &&
-                        <p  className={newsStyle.description}>{description}</p>
+                        <p  className={articleStyles.description}>{description}</p>
                     }
                     {!brief &&
-                        <p  className={newsStyle.author}>
+                        <p  className={articleStyles.author}>
                             By
                             <span> {author}</span> 
                             {hours &&
-                                <span className={newsStyle.hours}> - {moment.utc(publishedAt).local().startOf('seconds').fromNow()}</span>
+                                <span className={articleStyles.hours}> - {moment.utc(publishedAt).local().startOf('seconds').fromNow()}</span>
                             }
                         </p>
                     }
                     {brief && 
-                        <p className={`${newsStyle.hours} ${newsStyle.dateTime}`}>
+                        <p className={`${articleStyles.hours} ${articleStyles.dateTime}`}>
                             {moment.utc(publishedAt).local().format("hh:mm a on MMM DD")}
                         </p>
                         }
                     {hasComments && 
-                        <div className={newsStyle.comments}> 
+                        <div className={articleStyles.comments}> 
                             <span>
                                 <FaShare style={{color: "#d0d0d0", verticalAlign: 'middle'}}/> {shares} </span>
                             <span>

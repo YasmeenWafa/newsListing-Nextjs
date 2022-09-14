@@ -1,4 +1,4 @@
-import commentFormStyles from '../styles/newsItem.module.css';
+import commentFormStyles from '../styles/commentsForm.module.css';
 
 const CommentForm = () => {
     return (

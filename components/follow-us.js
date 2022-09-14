@@ -1,5 +1,5 @@
 import boxStyles from '../styles/box.module.css'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/main.module.css'
 import {AiFillFacebook, AiFillGooglePlusSquare, AiFillLinkedin, AiFillTwitterSquare, AiFillYoutube} from 'react-icons/ai';
 import {FaTumblrSquare, FaYoutubeSquare} from 'react-icons/fa';
 
