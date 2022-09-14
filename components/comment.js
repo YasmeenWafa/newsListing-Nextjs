@@ -20,7 +20,9 @@ const Comment = ({comment}) => {
                 <div className={commentStyles.header}>
                     <span style={{marginRight: '1rem'}}>{author}</span>
                     <div style={{color: '#bfbfc3', display:'inline-block'}}>
-                        <span style={{marginRight: '1rem'}}>{moment.utc(publishedAt).local().format('MMM DD, YYYY')}  </span>
+                        <span style={{marginRight: '1rem'}}>
+                            {moment.utc(publishedAt).local().format('MMM DD, YYYY')}
+                        </span>
                         <a href="#">Reply</a>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import boxStyles from '../styles/box.module.css'
 import styles from '../styles/main.module.css'
-import {AiFillFacebook, AiFillGooglePlusSquare, AiFillLinkedin, AiFillTwitterSquare, AiFillYoutube} from 'react-icons/ai';
+import {AiFillFacebook, AiFillGooglePlusSquare, AiFillLinkedin, AiFillTwitterSquare} from 'react-icons/ai';
 import {FaTumblrSquare, FaYoutubeSquare} from 'react-icons/fa';
 
 const FollowUs = () => {
@@ -14,7 +14,6 @@ const FollowUs = () => {
                 <FaYoutubeSquare className={boxStyles.icon} style={{color: '#d4120d'}}/>
                 <AiFillLinkedin className={boxStyles.icon} style={{color: '#047fb7'}}/>
                 <FaTumblrSquare className={boxStyles.icon} style={{color: '#2b4868'}}/>
-
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ import moment from 'moment';
 import Comment from '../../../components/comment';
 import CommentForm from '../../../components/comment-form';
 import SocialShare from '../../../components/social-share';
-import   {useRouter}  from 'next/router';
+import {useRouter}  from 'next/router';
 
 function NewsItem ({ router: { query } }) {
     
@@ -71,7 +71,6 @@ function NewsItem ({ router: { query } }) {
         </div>
     )
 } catch (err) {
-    // 👇️ This runs
     () => router.push('/')
   }
 }

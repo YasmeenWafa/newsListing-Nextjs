@@ -34,7 +34,7 @@ const NewsColumn = ({articles}) => {
     )
     return (
         <div className={ncStyles.container}>
-            { articles[0] && mainArticle(articles[0])}
+            {articles[0] && mainArticle(articles[0])}
             {articles.slice(1,articles.length).map(item => briefArticle(item))}
         </div>
     )

@@ -55,17 +55,19 @@ function News () {
                     <div className={newsStyles.mainNewsInner}>
                         <div className={newsStyles.firstArticle}>
                             {articles.length>0 && 
-                                <Article key={articles[0].id} article={articles[0]} row={false} main={true}
-                                hasComments={true} brief={false}
+                                <Article key={articles[0].id} 
+                                    article={articles[0]} row={false} main={true}
+                                    hasComments={true} brief={false}
                                 />
                             }   
                         </div>
                         <div className={newsStyles.otherArticles}>
                                 {articles.length >=2 && articles.map((item, index)=> {
                                     if(index < 2){
-                                        return <Article key={item.id} article={item} row={false} main={false}
-                                        hasComments={true} brief={false}
-                                        />
+                                        return <Article key={item.id} article={item}
+                                                row={false} main={false}
+                                                hasComments={true} brief={false}
+                                                />
                                     }
                                 })}
                         </div>
@@ -78,9 +80,10 @@ function News () {
                                     if(index < 3){
                                        return (
                                         <div  key={item.id} className={newsStyles.editorArticle}>
-                                       <Article article={item} row={true} main={false}
-                                       hours={true} hasComments={false} brief={false}
-                                       /> 
+                                            <Article article={item} row={true}
+                                                    main={false} hours={true} 
+                                                    hasComments={false} brief={false}
+                                            /> 
                                        </div>
                                        );
                                     }
@@ -114,10 +117,10 @@ function News () {
                         <NewsColumn articles={articles.slice(3,7)}/>
                     </div>
                     <div className={newsStyles.column}>
-                    <NewsColumn articles={articles.slice(2,6)}/>
+                        <NewsColumn articles={articles.slice(2,6)}/>
                     </div>
                     <div className={newsStyles.column}>
-                    <NewsColumn articles={articles.slice(1,4)}/>
+                        <NewsColumn articles={articles.slice(1,4)}/>
                     </div>
                 </div>
             </div>

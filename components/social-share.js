@@ -13,16 +13,20 @@ const SocialShare = ({shares}) => {
         </div>
         <div className={socialShareStyles.options}>
             <div className={socialShareStyles.option}>
-            <MdEmail/> <span>Email</span>
+                <MdEmail/> 
+                <span>Email</span>
             </div>
             <div className={socialShareStyles.option}>
-            <FaFacebookF/> <span>Facebook</span>
+                <FaFacebookF/> 
+                <span>Facebook</span>
             </div>
             <div className={socialShareStyles.option}>
-            <FaTwitter/>  <span>Twitter</span>
+                <FaTwitter/>  
+                <span>Twitter</span>
             </div>
             <div className={socialShareStyles.option}>
-            <IoIosShareAlt/>  <span>More</span>
+                <IoIosShareAlt/>  
+                <span>More</span>
             </div>
         </div>
     </div>
